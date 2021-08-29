@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-function App() {
+const joana = {
+  name: 'Joana da Silva',
+  age: 22,
+  purchases: [
+    { product: 'Notebook', price: 2500 },
+    { product: 'Geladeira', price: 3000 },
+    { product: 'Guitarra', price: 4000 },
+    { product: 'Smartphone', price: 7000 },
+  ],
+};
+
+const App = () => {
+  const dados = joana;
+
+  const total_purchases = dados.purchases
+    .map((item) => item.price)
+    .reduce((a, b) => a + b);
+
+  console.log(total_purchases);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <p>Nome: {dados.name}</p>
+      <p>Idade: {dados.age}</p>
+    </>
   );
-}
+};
 
 export default App;
