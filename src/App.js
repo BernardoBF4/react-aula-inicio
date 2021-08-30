@@ -48,4 +48,29 @@ const App = () => {
   );
 };
 
-export default App;
+const List = () => {
+  let movies = ['Transformers', 'LOTR', 'Velozes e Furiosos'];
+  movies = movies.map((item) => <li key={item}>{item}</li>); // The 'key' is important because it will provide an identity to each eleemnt of the array, making it lighter for changing the array, for React won't have to compile everything once again; only what's been changed.
+
+  return <ul>{movies}</ul>;
+};
+
+const Books = () => {
+  const books = [
+    { name: 'A Game of Thrones', year: 1996 },
+    { name: 'A Clash of Kings', year: 1998 },
+    { name: 'A Storm of Swords', year: 2000 },
+  ];
+
+  return (
+    <ul>
+      {books
+        .filter((book) => book.year >= 1998)
+        .map(({ name, year }) => (
+          <li key={year}>{name}</li>
+        ))}
+    </ul>
+  );
+}; // Aqui foi possível desestrutura o item passado para o 'map' para usar os atributos dele ao invés de usar 'item.atributo'. O filter é usado com map para filtrar somente o conteúdo que quero com a formatação que quero retornar para minha <ul>
+
+export { App, List, Books }; // As I am exporting two elements, I need to put them into an object, what will make necessary for me to destructure them when importing them on index.js
