@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { App, List, Books, ShowOff } from './App';
+import { App, List, Books, ShowOff, Button } from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/* <App />
     <List />
     <Books />
-    <ShowOff />
+    <ShowOff /> */}
+    <Button />
   </React.StrictMode>,
   document.getElementById('root')
 );

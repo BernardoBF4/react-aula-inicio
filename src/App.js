@@ -114,4 +114,12 @@ const ShowOff = () => {
   return <div>{products}</div>;
 };
 
-export { App, List, Books, ShowOff }; // As I am exporting two elements, I need to put them into an object, what will make necessary for me to destructure them when importing them on index.js
+const Button = () => {
+  function handleClick(event) {
+    console.table(event);
+  }
+
+  return <button onClick={handleClick}>Clique aqui</button>;
+};
+
+export { App, List, Books, ShowOff, Button }; // As I am exporting two elements, I need to put them into an object, what will make necessary for me to destructure them when importing them on index.js
